@@ -1,78 +1,103 @@
 import React, { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
-import { Alert, Card, Col, Container, Row } from 'react-bootstrap';
+import { Alert, Card, Button } from 'react-bootstrap';
 import SimpleSchema from 'simpl-schema';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import { ComponentIDs, PageIDs } from '../utilities/ids';
 
 /*
- * Signin page overrides the form’s submit event and call Meteor’s loginWithPassword().
- * Authentication errors modify the component’s state to be displayed
+ * SignUp page uses Meteor accounts.createUser() to register new users.
  */
-const SignIn = () => {
+const SignUp = () => {
   const [error, setError] = useState('');
   const [redirect, setRedirect] = useState(false);
+
   const schema = new SimpleSchema({
     email: String,
     password: String,
   });
   const bridge = new SimpleSchema2Bridge(schema);
 
-  // Handle Signin submission using Meteor's account mechanism.
   const submit = (doc) => {
-    // console.log('submit', doc, redirect);
     const { email, password } = doc;
-    Meteor.loginWithPassword(email, password, (err) => {
+    Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
         setError(err.reason);
       } else {
         setRedirect(true);
       }
     });
-    // console.log('submit2', email, password, error, redirect);
   };
 
-  // Render the signin form.
-  // console.log('render', error, redirect);
-  // if correct authentication, redirect to page instead of login screen
   if (redirect) {
-    return (<Navigate to="/home" />);
+    return <Navigate to="/home" />;
   }
-  // Otherwise return the Login form.
+
   return (
-    <Container id={PageIDs.signInPage}>
-      <Row className="justify-content-center">
-        <Col xs={9}>
-          <Col className="text-center">
-            <h2>Login to your account</h2>
-          </Col>
-          <AutoForm schema={bridge} onSubmit={data => submit(data)}>
-            <Card>
-              <Card.Body>
-                <TextField id={ComponentIDs.signInFormEmail} name="email" placeholder="E-mail address" />
-                <TextField id={ComponentIDs.signInFormPassword} name="password" placeholder="Password" type="password" />
-                <ErrorsField />
-                <SubmitField id={ComponentIDs.signInFormSubmit} />
-              </Card.Body>
-            </Card>
-          </AutoForm>
-          <Alert variant="secondary">
-            <Link to="/signup">Click here to Register</Link>
+    <div className="min-vh-100 d-flex align-items-center justify-content-center" style={{ backgroundColor: '#e0e4f0' }}>
+      <div className="bg-white rounded-4 shadow-lg p-5 text-center" style={{ width: '100%', maxWidth: '420px' }}>
+        <div className="d-flex flex-column align-items-center mb-4">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/4/4e/Hawaii_Warriors_logo.svg"
+            alt="UH Manoa Logo"
+            style={{ width: '70px', marginBottom: '15px' }}
+          />
+          <h2 className="fw-bold text-success">Manoa Lost and Found</h2>
+          <p className="text-muted mb-0">Create an account to get started</p>
+        </div>
+
+        <AutoForm schema={bridge} onSubmit={data => submit(data)}>
+          <Card className="border-0">
+            <Card.Body>
+              <div className="mb-3 text-start">
+                <TextField
+                  id={ComponentIDs.signUpFormEmail}
+                  name="email"
+                  placeholder="UH Email"
+                  className="form-control"
+                />
+              </div>
+              <div className="mb-3 text-start">
+                <TextField
+                  id={ComponentIDs.signUpFormPassword}
+                  name="password"
+                  placeholder="Password"
+                  type="password"
+                  className="form-control"
+                />
+              </div>
+
+              <ErrorsField />
+
+              <Button
+                id={ComponentIDs.signUpFormSubmit}
+                type="submit"
+                className="w-100 fw-semibold"
+                style={{ backgroundColor: '#024731', border: 'none' }}
+              >
+                Sign Up
+              </Button>
+            </Card.Body>
+          </Card>
+        </AutoForm>
+
+        <div className="mt-3">
+          <Link to="/signin" className="text-success fw-medium">
+            Already have an account? Log In
+          </Link>
+        </div>
+
+        {error !== '' && (
+          <Alert variant="danger" className="mt-3 text-start">
+            <Alert.Heading>Account creation failed</Alert.Heading>
+            {error}
           </Alert>
-          {error === '' ? (
-            ''
-          ) : (
-            <Alert variant="danger">
-              <Alert.Heading>Login was not successful</Alert.Heading>
-              {error}
-            </Alert>
-          )}
-        </Col>
-      </Row>
-    </Container>
+        )}
+      </div>
+    </div>
   );
 };
 
-export default SignIn;
+export default SignUp;
