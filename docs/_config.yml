@@ -5,3 +5,5 @@ theme: jekyll-theme-cayman
 # Optional customization
 show_downloads: false
 google_analytics: false
+include:
+  - custom.css
