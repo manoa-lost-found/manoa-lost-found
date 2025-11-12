@@ -1,0 +1,31 @@
+/* Custom UH Mānoa theme overrides */
+:root {
+  --uh-green: #00694b;
+  --uh-gold: #ffcc33;
+}
+
+body {
+  background-color: #ffffff;
+  color: #222;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+header, .page-header {
+  background-color: var(--uh-green);
+  color: white;
+}
+
+a {
+  color: var(--uh-green);
+}
+
+a:hover {
+  color: var(--uh-gold);
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #555;
+}
