@@ -102,35 +102,47 @@ Each semester, UH Mānoa students lose countless items — IDs, water bottles, t
 
 ---
 
-## 🖼️ Mockups
-> For M1, paper-and-pencil mockups are fine. Put images in `docs/images/` and link as `images/...` below.
+## 👣 User Guide (Mockup Walkthrough)
 
-- **Landing Page**  
-  ![Landing mockup](images/mockup-landing.jpg)
+### Landing Page  
+**[IMAGE: mockup-landing.jpg]**
 
-- **Lost/Found Feed with Filters**  
-  ![Feed mockup](images/mockup-feed.jpg)
+Landing → Login (UH SSO) → Personalized Dashboard.
 
-- **User Dashboard (My Lost / My Found / Matches)**  
-  ![Dashboard mockup](images/mockup-dashboard.jpg)
+### Lost/Found Feed with Filters  
+**[IMAGE: mockup-feed.jpg]**
 
-- **Post Lost Item Form**  
-  ![Post Lost mockup](images/mockup-post-lost.jpg)
+Shows Lost and Found items with filters (category, date, building, keyword).
 
-- **Post Found Item Form**  
-  ![Post Found mockup](images/mockup-post-found.jpg)
+### User Dashboard (My Lost / My Found / Matches)  
+**[IMAGE: mockup-dashboard.jpg]**
 
-- **Item Details Page**  
-  ![Item details mockup](images/mockup-item-details.jpg)
+Displays the user’s Lost and Found posts plus alerts for matches.
 
-- **Recovery Instructions**  
-  ![Recovery instructions mockup](images/mockup-recovery.jpg)
+### Post Lost Item Form  
+**[IMAGE: mockup-post-lost.jpg]**
 
-- **Admin Panel**  
-  ![Admin mockup](images/mockup-admin.jpg)
+Form to report a lost item with photo upload, description, and last-seen location/time.
 
-- **Locations & Offices Directory**  
-  ![Locations mockup](images/mockup-locations.jpg)
+### Post Found Item Form  
+**[IMAGE: mockup-post-found.jpg]**
+
+Form for users who found an item — includes where/when found and where it was turned in.
+
+### Item Details Page  
+**[IMAGE: mockup-item-details.jpg]**
+
+Shows full details about one item (photo, description, contact, notify owner button).
+
+### Recovery Instructions  
+**[IMAGE: mockup-recovery.jpg]**
+
+Step-by-step instructions for turning items in and recovering them through UH offices.
+
+### Locations & Offices Directory  
+**[IMAGE: mockup-locations.jpg]**
+
+Lists official UH drop-off offices (Campus Center, Library, etc.) with map links.
 
 ---
 
@@ -199,7 +211,7 @@ mockup-item-details.jpg
 mockup-recovery.jpg
 mockup-locations.jpg
 /src/ # (future implementation)
-/README.md # (optional: link to live site)
+/README.md # (link to live site)
 
 ## ⚠️ Risks & Mitigations
 
