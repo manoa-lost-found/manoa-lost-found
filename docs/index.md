@@ -134,8 +134,16 @@ Form for users who found an item — includes where/when found and where it was 
 
 Shows full details about one item (photo, description, contact, notify owner button).
 
-### Recovery Instructions  
-![Recovery Instructions](images/mockup-recovery.jpg)
+### Recovery Instructions
+
+**Recovery Overview**  
+<img src="images/mockup-recovery.jpg" width="700" />
+
+**1. Turning in the Item**  
+<img src="images/mockup-recovery2.jpg" width="700" />
+
+**2. Staff Verifies the Item**  
+<img src="images/mockup-recovery3.jpg" width="700" />
 
 Step-by-step instructions for turning items in and recovering them through UH offices.
 
