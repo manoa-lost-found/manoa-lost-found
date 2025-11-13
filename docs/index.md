@@ -105,42 +105,42 @@ Each semester, UH Mānoa students lose countless items — IDs, water bottles, t
 ## 👣 User Guide (Mockup Walkthrough)
 
 ### Landing Page  
-**[IMAGE: mockup-landing.jpg]**
+![Landing Page](images/mockup-landing.jpg)
 
 Landing → Login (UH SSO) → Personalized Dashboard.
 
 ### Lost/Found Feed with Filters  
-**[IMAGE: mockup-feed.jpg]**
+![Lost/Found Feed](images/mockup-feed.jpg)
 
 Shows Lost and Found items with filters (category, date, building, keyword).
 
 ### User Dashboard (My Lost / My Found / Matches)  
-**[IMAGE: mockup-dashboard.jpg]**
+![User Dashboard](images/mockup-dashboard.jpg)
 
 Displays the user’s Lost and Found posts plus alerts for matches.
 
 ### Post Lost Item Form  
-**[IMAGE: mockup-post-lost.jpg]**
+![Post Lost Item Form](images/mockup-post-lost.jpg)
 
 Form to report a lost item with photo upload, description, and last-seen location/time.
 
 ### Post Found Item Form  
-**[IMAGE: mockup-post-found.jpg]**
+![Post Found Item Form](images/mockup-post-found.jpg)
 
 Form for users who found an item — includes where/when found and where it was turned in.
 
 ### Item Details Page  
-**[IMAGE: mockup-item-details.jpg]**
+![Item Details](images/mockup-item-details.jpg)
 
 Shows full details about one item (photo, description, contact, notify owner button).
 
 ### Recovery Instructions  
-**[IMAGE: mockup-recovery.jpg]**
+![Recovery Instructions](images/mockup-recovery.jpg)
 
 Step-by-step instructions for turning items in and recovering them through UH offices.
 
 ### Locations & Offices Directory  
-**[IMAGE: mockup-locations.jpg]**
+![Locations & Offices](images/mockup-locations.jpg)
 
 Lists official UH drop-off offices (Campus Center, Library, etc.) with map links.
 
